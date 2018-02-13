@@ -17,15 +17,19 @@ typedef enum {
 typedef State (EventHandler)(void) ;
 
 static EventHandler foo;
+static EventHandler bar;
+static EventHandler baz;
 
-EventHandler* table[nb_States][nb_Events];
+EventHandler* table[nb_States][nb_Events] = {
+    [A][X] = foo,
+    [B][Y] = bar,
+    [C][Z] = baz,
+};
 
 int main() {
     State s = A;
     Event e = X;
     EventHandler* eh;
-
-    table[A][X] = foo;
 
     for (;;) {
         e = X;
@@ -41,4 +45,12 @@ int main() {
 
 static State foo() {
     return B;
+}
+
+static State bar() {
+    return C;
+}
+
+static State baz() {
+    return A;
 }
