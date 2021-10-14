@@ -1,4 +1,4 @@
-/* Basé sur :
+/* Basé et rouge pilé sur :
  * - http://jhnet.co.uk/articles/cpp_magic
  * - https://github.com/18sg/uSHET/blob/master/lib/cpp_magic.h
  */
